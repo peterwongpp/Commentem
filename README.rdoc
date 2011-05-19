@@ -1,0 +1,112 @@
+= Commentem
+
+Rails gem for building a commenting systems by using Active Records.
+
+by Peter Wong <peter@peterwongpp.com>
+
+GitHub Project: http://github.com/peterwongpp/commentem
+
+-----
+
+== Installation
+
+=== Rails 3
+
+If you would like to install it as gem, put this in your Gemfile:
+
+    gem 'commentem'
+
+If you would rather like to install it as plugin, run this command in your console:
+
+    rails plugin install git://github.com/peterwongpp/commentem.git
+
+And then run:
+
+    rake generate commentem
+    rake db:migrate
+
+== Usage
+
+Just add `acts_as_commenter` and `acts_as_commentable` to your models. You could mix them in the same model if you like. See the examples below:
+
+---
+
+    # Case 1
+    # A user can comment on posts
+    
+    class User < ActiveRecord::Base
+      acts_as_commenter
+    end
+    
+    class Post < ActiveRecord::Base
+      acts_as_commentable
+    end
+    
+    # You have to build your own form for commenting
+    # To comment:
+    
+    @user = User.find(1)
+    @post = Post.find(1)
+    
+    @user.comment(@post, "Your comment's here :)")
+    
+    # To read comments:
+    
+    @post = Post.find(1)
+    @post.comments
+
+---
+
+    # Case 2
+    # A user can comment on users
+    
+    class User < ActiveRecord::Base
+      acts_as_commenter
+      acts_as_commentable
+    end
+    
+    # To comment:
+    @user1 = User.find(1) # The user who gives the comment
+    @user2 = User.find(2) # The user who receives the comment
+    
+    @user1.comment(@user2, "comment goes to here")
+    
+    # To read comments:
+    @user = User.fond(2)
+    
+    @user.comments
+
+---
+
+    # Case 3
+    # A user can comment on users or posts
+    
+    class User < ActiveRecord::Base
+      acts_as_commenter
+      acts_as_commentable
+    end
+    
+    class Post < ActiveRecord::Base
+      acts_as_commentable
+    end
+    
+    # To comment
+    @user = User.find(1)
+    @user2 = User.find(2)
+    @post = Post.find(1)
+    
+    @user.comment(@user2, "comment goes to here")
+    @user.comment(@post, "comment goes to here")
+    
+    # To read comments:
+    
+    @user = User.find(1)
+    @user2 = User.find(2)
+    @post = Post.find(1)
+    
+    @user2.comments
+    @post.comments
+    
+    @user.comments # retrieve all comments from @user, including on @user2 and @post
+    @user.comments_on(@user2) # same as @user2.comments
+    @user.comments_on(@post) # same as @post.comments
