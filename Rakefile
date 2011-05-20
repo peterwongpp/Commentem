@@ -2,7 +2,7 @@ require 'rubygems'
 require 'rake'
 require 'echoe'
 
-Echoe.new('commentem', '1.0.0') do |p|
+Echoe.new('commentem', '1.0.1') do |p|
   p.description     = "A generic commenting system."
   p.url             = "http://github.com/peterwongpp/Commentem"
   p.author          = "Peter Wong"
