@@ -27,58 +27,8 @@ And then run:
 
 == Usage
 
-Just add `acts_as_commenter` and `acts_as_commentable` to your models. You could mix them in the same model if you like. See the examples below:
+Just add `acts_as_commenter` and `acts_as_commentable` to your models. You could mix them in the same model if you like. See the example below:
 
----
-
-    # Case 1
-    # A user can comment on posts
-    
-    class User < ActiveRecord::Base
-      acts_as_commenter
-    end
-    
-    class Post < ActiveRecord::Base
-      acts_as_commentable
-    end
-    
-    # You have to build your own form for commenting
-    # To comment:
-    
-    @user = User.find(1)
-    @post = Post.find(1)
-    
-    @user.comment(@post, "Your comment's here :)")
-    
-    # To read comments:
-    
-    @post = Post.find(1)
-    @post.comments
-
----
-
-    # Case 2
-    # A user can comment on users
-    
-    class User < ActiveRecord::Base
-      acts_as_commenter
-      acts_as_commentable
-    end
-    
-    # To comment:
-    @user1 = User.find(1) # The user who gives the comment
-    @user2 = User.find(2) # The user who receives the comment
-    
-    @user1.comment(@user2, "comment goes to here")
-    
-    # To read comments:
-    @user = User.fond(2)
-    
-    @user.comments
-
----
-
-    # Case 3
     # A user can comment on users or posts
     
     class User < ActiveRecord::Base
@@ -97,6 +47,7 @@ Just add `acts_as_commenter` and `acts_as_commentable` to your models. You could
     
     @user.comment(@user2, "comment goes to here")
     @user.comment(@post, "comment goes to here")
+	@usr.comment(@user, "you could comment on yourself too")
     
     # To read comments:
     
