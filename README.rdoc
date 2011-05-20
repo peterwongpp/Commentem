@@ -8,6 +8,11 @@ GitHub Project: http://github.com/peterwongpp/commentem
 
 -----
 
+TODO List:
+
+* Better documentation (Making use of rdoc and ri)
+* Write tests
+
 == Installation
 
 === Rails 3
