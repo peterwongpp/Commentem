@@ -27,7 +27,7 @@ If you would rather like to install it as plugin, run this command in your conso
 
 And then run:
 
-    rake generate commentem
+    rails generate commentem
     rake db:migrate
 
 == Usage
