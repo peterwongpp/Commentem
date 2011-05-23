@@ -4,7 +4,7 @@ require 'echoe'
 
 Echoe.new('commentem', '1.0.0') do |p|
   p.description     = "A generic commenting system."
-  p.url             = "http://github.com/peterwongpp/commentem"
+  p.url             = "http://github.com/peterwongpp/Commentem"
   p.author          = "Peter Wong"
   p.email           = "peter@peterwongpp.com"
   p.ignore_pattern  = ["tmp/*", "script/*"]
