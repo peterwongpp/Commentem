@@ -66,3 +66,17 @@ Just add `acts_as_commenter` and `acts_as_commentable` to your models. You could
     @user.comments # retrieve all comments from @user, including on @user2 and @post
     @user.comments_on(@user2) # same as @user2.comments
     @user.comments_on(@post) # same as @post.comments
+
+== Change Logs
+
+Version 1.0.2
+
+- Updated the code of the comment model to use class methods instead of scopes (don't worry, no any change to the usage).
+
+Version 1.0.1
+
+- Updated the Readme file.
+
+Version 1.0.0
+
+- The Commentem gem is published with basic necessary functionalities (commenting and querying).
