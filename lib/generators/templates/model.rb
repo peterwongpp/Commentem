@@ -8,7 +8,7 @@ class Comment < ActiveRecord::Base
     end
     
     def comments_on(commentable)
-      where(["commentable_id = ? AND commentable_type = ?", commentable.id, commentable.class.name)
+      where(["commentable_id = ? AND commentable_type = ?", commentable.id, commentable.class.name])
     end
   end
 end

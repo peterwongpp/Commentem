@@ -69,6 +69,10 @@ Just add `acts_as_commenter` and `acts_as_commentable` to your models. You could
 
 == Change Logs
 
+Version 1.0.3
+
+- Fixed the silly typo error on the generated Comment model.
+
 Version 1.0.2
 
 - Updated the code of the comment model to use class methods instead of scopes (don't worry, no any change to the usage).

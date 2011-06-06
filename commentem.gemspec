@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{commentem}
-  s.version = "1.0.2"
+  s.version = "1.0.3"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 1.2") if s.respond_to? :required_rubygems_version=
   s.authors = ["Peter Wong"]
-  s.date = %q{2011-06-04}
+  s.date = %q{2011-06-07}
   s.description = %q{A generic commenting system.}
   s.email = %q{peter@peterwongpp.com}
   s.extra_rdoc_files = ["README.rdoc", "lib/commentem.rb", "lib/commentem/commentable.rb", "lib/commentem/commenter.rb", "lib/generators/commentem_generator.rb", "lib/generators/templates/migration.rb", "lib/generators/templates/model.rb"]
